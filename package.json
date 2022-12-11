@@ -1,0 +1,26 @@
+{
+  "name": "openai-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=dev pm2 start ecosystem.config.js --name openAIBot-dev && pm2 logs openAIBot-dev --raw | pino-pretty",
+    "stop": "pm2 delete openAIBot-dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "pino": "^8.7.0",
+    "pm2": "^5.2.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "pino-pretty": "^9.1.1"
+  }
+}
