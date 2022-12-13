@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=dev pm2 start ecosystem.config.js --name openAIBot-dev && pm2 logs openAIBot-dev --raw | pino-pretty",
-    "stop": "pm2 delete openAIBot-dev",
+    "start:dev": "NODE_ENV=dev pm2 start ecosystem.config.js --name openAIBot-dev && pm2 logs openAIBot-dev --raw | pino-pretty",
+    "stop:dev": "pm2 delete openAIBot-dev",
+    "log:dev": "pm2 logs openAIBot-dev --raw | pino-pretty",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

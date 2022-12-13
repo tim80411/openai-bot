@@ -1,0 +1,7 @@
+# flyctl launch added from .gitignore
+# dependency
+**/node_modules
+
+# secret
+**/.env
+fly.toml
