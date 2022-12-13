@@ -12,8 +12,30 @@
 | sensitive data     | dotenv                  |
 
 ## discord bot運行
-- npm i
+
+### 前置
+- node
+- (optional)pm2
+- (optional)pino-pretty
+### 步驟
+- 安裝依賴: `npm i`
 - 建立.env檔案並參考.env.example放入兩個TOKEN: discord, openai
+- 使用 `node index.js` or `node index | pino-pretty`
+
+## 部署
+### server
+使用 [fly.io 與 flyctl](https://fly.io/docs/languages-and-frameworks/node/)
+
+### 方法1: flyctl部署
+適合只是想嘗試看看bot而沒有要額外修改開發的人
+- 登入：flyctl auth login
+- 部署：flyctl deploy
+
+### 方法2: github action
+適合想延伸目前的專案繼續開發者
+- 透過指令取得fly.io token: `flyctl auth token`
+- 設定 github repo secret: FLY_API_TOKEN
+- 當新的feature push到main branch後就會觸發github action並開始部署
 
 ## 功能
 目前是針對發送訊息時會針對特定訊息做處理
