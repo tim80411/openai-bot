@@ -5,6 +5,8 @@ on:
       - main
 env:
   FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+  BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+  OPENAI_TOKEN: ${{ secrets.OPENAI_TOKEN }}
 jobs:
   deploy:
     name: Deploy app
@@ -12,4 +14,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy --remote-only
+      - run: flyctl deploy --remote-only --build-secret
