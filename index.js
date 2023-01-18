@@ -26,6 +26,7 @@ const client = new Client({
 
 client.on('ready', () => {
   logger.debug({ msg: 'Bot is ready!' });
+  logger.debug({ msg: 'Bot is ready again!' });
 });
 
 client.on('messageCreate', async (message) => {
@@ -51,9 +52,9 @@ client.on('messageCreate', async (message) => {
     const completion = await openai.createCompletion({
       model: 'text-davinci-003',
       prompt: input,
-      temperature: 0.9,
+      temperature: 0,
       max_tokens: 1000,
-      frequency_penalty: 0,
+      frequency_penalty: 0.5,
       presence_penalty: 0.6,
       stop: ['AI', 'HUMAN'],
     });
